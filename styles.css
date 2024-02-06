@@ -143,6 +143,12 @@ iframe {
     padding: 1px 3px 1px 3px;  
   }
 
+.link-a {
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
+  color: #9C27B0;
+}
+
 
 .activeline {
   background: #373831; /* Cambia el color de fondo de la línea activa según tu preferencia */
