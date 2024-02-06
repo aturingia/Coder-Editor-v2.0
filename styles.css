@@ -101,7 +101,8 @@ iframe {
 
 /* Cambiar el color del texto cuando se pasa el ratón por encima */
 .dropdown-content a:hover {
-  background-color: #f1f1f1;
+  background-color: black;
+  color: #fff;
 }
 
 /* Mostrar el menú desplegable al pasar el ratón por encima del botón */
