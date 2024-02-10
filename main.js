@@ -6,6 +6,8 @@
     tabSize: 2,
     theme: "monokai",
     mode: "text/html",
+    emmet: true,
+    profile: "html",
     styleActiveLine: true,
     lineWrapping: true,
     indentUnit: 2,
@@ -18,6 +20,8 @@
     foldGutter: true,
     extraKeys: {"Ctrl-Space": "autocomplete"}
   });
+
+  emmetCodeMirror(editorHtml);
 
   editorHtml.on("change", function() {
     clearTimeout(delay);
