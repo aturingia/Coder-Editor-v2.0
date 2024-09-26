@@ -194,7 +194,8 @@ iframe {
 .cm-s-monokai .cm-keyword,
 .cm-s-monokai .cm-function,
 .cm-s-monokai .cm-boolean {font-style: italic;}
-
+.cm-s-monokai .cm-keyword {font-style: italic;}
+.cm-s-monokai .cm-function {font-style: italic;}
 
 
 /* Maquetacion y redimencionamiento */

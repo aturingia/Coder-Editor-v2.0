@@ -11,7 +11,7 @@
     styleActiveLine: true,
     lineWrapping: true,
     indentUnit: 2,
-    indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
+    //indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
     autoCloseTags: true,
     matchBrackets: true,
     autoCloseBrackets: true,
@@ -208,7 +208,7 @@
   var delay;
   var editorJs = CodeMirror.fromTextArea(document.getElementById('code-js'), {
     lineNumbers: true,
-    tabSize: 2,
+    //tabSize: 2,
     theme: "monokai",
     mode: {name: "javascript", globalVars: true},
     styleActiveLine: true,
