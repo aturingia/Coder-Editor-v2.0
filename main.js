@@ -182,6 +182,35 @@
       reader.readAsText(file);
     }
   });
+
+//======= Función para agregar líneas de indentación ================
+    function addIndentGuides(cm, line, element) {
+      var lineText = line.text;
+      var indentLevel = lineText.match(/^\s+/);  // Detectar la indentación al inicio de la línea
+
+      if (indentLevel) {
+        var indentWidth = cm.defaultCharWidth() * cm.getOption("indentUnit");
+        var numIndentGuides = Math.floor(indentLevel[0].length / cm.getOption("indentUnit"));
+
+        // Agregar líneas de guía por cada nivel de indentación
+        for (var i = 0; i < numIndentGuides; i++) {
+          var indentGuide = document.createElement("div");
+          indentGuide.className = "indent-guide";
+          indentGuide.style.left = (i * indentWidth) + "px";
+          element.insertBefore(indentGuide, element.firstChild);
+        }
+      }
+    }
+
+    // Evento que se dispara al renderizar una línea
+    editorCss.on("renderLine", function(cm, line, element) {
+      addIndentGuides(cm, line, element);
+    });
+
+    // Refrescar el editor para aplicar los cambios
+    editorCss.refresh();
+
+
   
   //====== Resaltado de linea activa =======
   var activeLine = null;
