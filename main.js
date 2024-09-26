@@ -49,6 +49,35 @@
     editorHtml.setValue(archivoContenido);
   }
 
+//======= Función para agregar líneas de indentación ================
+    function addIndentGuides(cm, line, element) {
+      var lineText = line.text;
+      var indentLevel = lineText.match(/^\s+/);  // Detectar la indentación al inicio de la línea
+
+      if (indentLevel) {
+        var indentWidth = cm.defaultCharWidth() * cm.getOption("indentUnit");
+        var numIndentGuides = Math.floor(indentLevel[0].length / cm.getOption("indentUnit"));
+
+        // Agregar líneas de guía por cada nivel de indentación
+        for (var i = 0; i < numIndentGuides; i++) {
+          var indentGuide = document.createElement("div");
+          indentGuide.className = "indent-guide";
+          indentGuide.style.left = (i * indentWidth) + "px";
+          element.insertBefore(indentGuide, element.firstChild);
+        }
+      }
+    }
+
+    // Evento que se dispara al renderizar una línea
+    editorHtml.on("renderLine", function(cm, line, element) {
+      addIndentGuides(cm, line, element);
+    });
+
+    // Refrescar el editor para aplicar los cambios
+    editorHtml.refresh();
+
+
+
 // Simula cargar un archivo (puedes reemplazar esto con tu lógica real)
   var contenidoArchivo = '<!DOCTYPE html>\n<html lang="es">\n<head>\n\t<meta charset="UTF-8">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<meta http-equiv="X-UA-Compatible" content="ie=edge">\n\t<title>Mi Website</title>\n</head>\n<body>\n\t<h1>Hola, mundo!</h1>\n</body>\n</html>';
   cargarArchivoContenido(contenidoArchivo);
@@ -260,7 +289,34 @@
     newWindow.document.write(codeH+codeC+codeJ);
     newWindow.document.close();
   }
-  
+ 
+//======= Función para agregar líneas de indentación ================
+    function addIndentGuides(cm, line, element) {
+      var lineText = line.text;
+      var indentLevel = lineText.match(/^\s+/);  // Detectar la indentación al inicio de la línea
+
+      if (indentLevel) {
+        var indentWidth = cm.defaultCharWidth() * cm.getOption("indentUnit");
+        var numIndentGuides = Math.floor(indentLevel[0].length / cm.getOption("indentUnit"));
+
+        // Agregar líneas de guía por cada nivel de indentación
+        for (var i = 0; i < numIndentGuides; i++) {
+          var indentGuide = document.createElement("div");
+          indentGuide.className = "indent-guide";
+          indentGuide.style.left = (i * indentWidth) + "px";
+          element.insertBefore(indentGuide, element.firstChild);
+        }
+      }
+    }
+
+    // Evento que se dispara al renderizar una línea
+    editorJs.on("renderLine", function(cm, line, element) {
+      addIndentGuides(cm, line, element);
+    });
+
+    // Refrescar el editor para aplicar los cambios
+    editorJs.refresh();
+
   //====== Resaltado de linea activa =======
   var activeLine = null;
 
