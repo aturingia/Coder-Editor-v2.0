@@ -11,7 +11,7 @@
     styleActiveLine: true,
     lineWrapping: true,
     indentUnit: 2,
-    //indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
+    indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
     autoCloseTags: true,
     matchBrackets: true,
     autoCloseBrackets: true,
@@ -48,23 +48,6 @@
   function cargarArchivoContenido(archivoContenido) {
     editorHtml.setValue(archivoContenido);
   }
-
-//============== guía de indentación =======================
-editorHtml.on("renderLine", function(cm, line, element) {
-  var lineText = line.text;
-  var indentLevel = lineText.match(/^\s+/);
-  
-  if (indentLevel) {
-    var indentWidth = editorHtml.defaultCharWidth() * editorHtml.getOption("indentUnit");
-
-    for (var i = 0; i < indentLevel[0].length; i += editorHtml.getOption("indentUnit")) {
-      var indentGuide = document.createElement("div");
-      indentGuide.className = "indent-guide";
-      indentGuide.style.left = (i * indentWidth) + "px";
-      element.insertBefore(indentGuide, element.firstChild);
-    }
-  }
-});
 
 // Simula cargar un archivo (puedes reemplazar esto con tu lógica real)
   var contenidoArchivo = '<!DOCTYPE html>\n<html lang="es">\n<head>\n\t<meta charset="UTF-8">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<meta http-equiv="X-UA-Compatible" content="ie=edge">\n\t<title>Mi Website</title>\n</head>\n<body>\n\t<h1>Hola, mundo!</h1>\n</body>\n</html>';
@@ -120,7 +103,7 @@ editorHtml.on("renderLine", function(cm, line, element) {
     styleActiveLine: true,
     lineWrapping: true,
     indentUnit: 2,
-    //indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
+    indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
     autoCloseTags: true,
     matchBrackets: true,
     autoCloseBrackets: true,
@@ -170,7 +153,6 @@ editorHtml.on("renderLine", function(cm, line, element) {
       reader.readAsText(file);
     }
   });
-
   
   //====== Resaltado de linea activa =======
   var activeLine = null;
@@ -197,7 +179,7 @@ editorHtml.on("renderLine", function(cm, line, element) {
   var delay;
   var editorJs = CodeMirror.fromTextArea(document.getElementById('code-js'), {
     lineNumbers: true,
-    //tabSize: 2,
+    tabSize: 2,
     theme: "monokai",
     mode: {name: "javascript", globalVars: true},
     styleActiveLine: true,
@@ -278,23 +260,6 @@ editorHtml.on("renderLine", function(cm, line, element) {
     newWindow.document.write(codeH+codeC+codeJ);
     newWindow.document.close();
   }
-
-//============== guía de indentación =======================
-editorJs.on("renderLine", function(cm, line, element) {
-  var lineText = line.text;
-  var indentLevel = lineText.match(/^\s+/);
-  
-  if (indentLevel) {
-    var indentWidth = editorJs.defaultCharWidth() * editorJs.getOption("indentUnit");
-
-    for (var i = 0; i < indentLevel[0].length; i += editorJs.getOption("indentUnit")) {
-      var indentGuide = document.createElement("div");
-      indentGuide.className = "indent-guide";
-      indentGuide.style.left = (i * indentWidth) + "px";
-      element.insertBefore(indentGuide, element.firstChild);
-    }
-  }
-});
   
   //====== Resaltado de linea activa =======
   var activeLine = null;

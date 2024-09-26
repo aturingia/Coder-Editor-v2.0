@@ -170,26 +170,6 @@ iframe {
 .cm-s-monokai .cm-function,
 .cm-s-monokai .cm-boolean {font-style: italic;}
 
-/*======== guía de indentación=========*/
-.CodeMirror-lines {
-  position: relative;
-}
-
-.indent-guide {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 1px;
-  background-color: #9E9E9E;
-}
-
-.CodeMirror pre {
-  position: relative;
-}
-
-.CodeMirror pre .indent-guide {
-  left: 20px; /* Ajusta la posición según el ancho de cada indentación */
-}
 
 
 
