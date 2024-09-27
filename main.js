@@ -9,7 +9,7 @@
     emmet: true,
     profile: "html",
     styleActiveLine: true,
-    lineWrapping: true,
+    lineWrapping: false,
     indentUnit: 2,
     //indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
     autoCloseTags: true,
@@ -130,7 +130,7 @@
     theme: "monokai",
     mode:"css",
     styleActiveLine: true,
-    lineWrapping: true,
+    lineWrapping: false,
     indentUnit: 2,
     indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
     autoCloseTags: true,
@@ -241,7 +241,7 @@
     theme: "monokai",
     mode: {name: "javascript", globalVars: true},
     styleActiveLine: true,
-    lineWrapping: true,
+    lineWrapping: false,
     indentUnit: 2,
     indentWithTabs: false, // Indentación con espacios en lugar de tabulaciones.
     autoCloseTags: true,
