@@ -79,7 +79,7 @@
 
 
 // Simula cargar un archivo (puedes reemplazar esto con tu lógica real)
-  var contenidoArchivo = '<!DOCTYPE html>\n<html lang="es">\n<head>\n\t<meta charset="UTF-8">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<meta http-equiv="X-UA-Compatible" content="ie=edge">\n\t<title>Mi Website</title>\n</head>\n<body>\n\t<h1>Hola, mundo!</h1>\n</body>\n</html>';
+  var contenidoArchivo = '<!DOCTYPE html>\n<html lang="es">\n<head>\n\t<meta charset="UTF-8">\n\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n\t<title>Mi Website</title>\n</head>\n<body>\n\t<h1>Hola, mundo!</h1>\n</body>\n</html>';
   cargarArchivoContenido(contenidoArchivo);
 
 // Manejar el evento de cambio de archivo
